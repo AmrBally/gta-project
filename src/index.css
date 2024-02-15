@@ -23,13 +23,18 @@ body {
   background-size: cover;
 }
 
-/* 
-.backGroundClock {
-  background-image: url("./assets/images/Widget Container.png");
+.backGroundFolder {
+  background-image: url("./assets/images/folderwallpaper.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-} */
+}
+.backGroundFolderNotification {
+  background-image: url("./assets/images/folderNotif.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 * {
   -o-user-select: none; /* Safari */

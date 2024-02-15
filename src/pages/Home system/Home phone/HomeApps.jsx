@@ -8,6 +8,9 @@ import Instashot from "../../../assets/images/insta.png";
 import folder from "../../../assets/images/folder.png";
 import whatsApp from "../../../assets/images/whatsApp.png";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Folder from "../Folder/Folder";
+import PropTypes from "prop-types";
 
 const apps = [
   {
@@ -52,7 +55,8 @@ const apps = [
   },
 ];
 
-function HomeApps() {
+// eslint-disable-next-line react/prop-types
+function HomeApps({ setOpenedFolder, openedFolder }) {
   const navigate = useNavigate();
 
   return (
@@ -62,11 +66,23 @@ function HomeApps() {
           key={index + "c"}
           name={app.name}
           img={app?.icon}
-          onClick={() => navigate(app.path)}
+          onClick={() => {
+            if (app.name === "Folder") {
+              setOpenedFolder(true);
+            } else {
+              navigate(app.path);
+            }
+          }}
         />
       ))}
+      {openedFolder && <Folder />}
     </div>
   );
 }
+
+HomeApps.prototype = {
+  setOpenedFolder: PropTypes.func.isRequired,
+  openedFolder: PropTypes.bool.isRequired,
+};
 
 export default HomeApps;

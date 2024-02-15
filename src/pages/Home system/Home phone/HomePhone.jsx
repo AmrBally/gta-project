@@ -7,6 +7,8 @@ import shopping from "../../../assets/images/shopping.png";
 import clock from "../../../assets/images/wallpaper2.png";
 import Clock from "../../../components/Clock";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import HomeBar from "../../../components/ui/HomeBar/HomeBar";
 
 const apps = [
   {
@@ -33,6 +35,7 @@ const apps = [
 
 const HomePhone = () => {
   const navigate = useNavigate();
+  const [openedFolder, setOpenedFolder] = useState(false);
 
   return (
     <div className="backGroundHome relative rounded-[30px] w-full h-full overflow-hidden">
@@ -69,9 +72,21 @@ const HomePhone = () => {
 
       {/* Dynamic Apps */}
       <div className="px-3 mt-2 w-full flex items-center">
-        <HomeApps />
+        <HomeApps
+          openedFolder={openedFolder}
+          setOpenedFolder={setOpenedFolder}
+        />
       </div>
       <HomeFooter />
+
+      <div>
+        {openedFolder && (
+          <HomeBar
+            setOpenedFolder={setOpenedFolder}
+            openedFolder={openedFolder}
+          />
+        )}
+      </div>
     </div>
   );
 };

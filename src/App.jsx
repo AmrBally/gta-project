@@ -8,6 +8,7 @@ import Contacts from "./pages/contacts/Contacts.jsx";
 import Notifications from "./pages/Home system/Notifications/Notifications.jsx";
 import Gallery from "./pages/Gallery/Gallery.jsx";
 import ControlCenter from "./pages/Home system/Control Center/ControlCenter.jsx";
+import Folder from "./pages/Home system/Folder/Folder.jsx";
 
 function App() {
   return (
@@ -63,11 +64,11 @@ function App() {
           }
         />
         <Route
-          path="/notifications"
+          path="/folder"
           element={
             <>
-              <Notifications />
-              <HomeBar />
+              <Folder />
+              {/* <HomeBar /> */}
             </>
           }
         />
