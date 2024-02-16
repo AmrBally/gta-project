@@ -19,7 +19,7 @@ import gallery18 from "../../assets/images/gallery-18.png";
 import gallery19 from "../../assets/images/gallery-19.png";
 import gallery20 from "../../assets/images/gallery-20.png";
 import gallery21 from "../../assets/images/gallery-21.png";
-import ShareBox from "./ShareBox";
+// import ShareBox from "./ShareBox";
 
 const galleryImages = [
     {
