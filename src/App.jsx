@@ -4,11 +4,14 @@ import HomePhone from "./pages/Home system/Home phone/HomePhone";
 import HomeBar from "./components/ui/HomeBar/HomeBar.jsx";
 import NewCalculator from "./pages/calculator/newCalculator.jsx";
 import AppStore from "./pages/AppStore/AppStore.jsx";
-import Contacts from "./pages/contacts/Contacts.jsx";
 import Gallery from "./pages/Gallery/Gallery.jsx";
-import Folder from "./pages/Home system/Folder/Folder.jsx";
+import Keyboard from "./pages/CallApp/Keyboard/Keyboard.jsx";
+import { useState } from "react";
 
-function App() {
+function App ()
+{
+  const [ makeCall, setMakeCall ] = useState( false );
+
   return (
     <div className=" relative rounded-[50px] overflow-hidden p-3 border-[3px] border-gray-500 bg-black h-screen w-screen">
       <Routes>
@@ -27,7 +30,7 @@ function App() {
             <>
               <Header />
               <NewCalculator />
-              <HomeBar />
+              <HomeBar bottom="20px" />
             </>
           }
         />
@@ -37,17 +40,17 @@ function App() {
             <>
               <Header />
               <AppStore />
-              <HomeBar />
+              <HomeBar bottom="20px" />
             </>
           }
         />
         <Route
-          path="/contacts"
+          path="/phonecall"
           element={
             <>
-              <Header />
-              <Contacts />
-              <HomeBar />
+              <Header dark={!makeCall} />
+              <Keyboard setMakeCall={setMakeCall} makeCall={makeCall} />
+              <HomeBar dark={true} bottom="20px" />
             </>
           }
         />
@@ -57,16 +60,7 @@ function App() {
             <>
               <Header />
               <Gallery />
-              <HomeBar />
-            </>
-          }
-        />
-        <Route
-          path="/folder"
-          element={
-            <>
-              <Folder />
-              {/* <HomeBar /> */}
+              <HomeBar bottom="20px" />
             </>
           }
         />

@@ -9,7 +9,7 @@ import Clock from "../../../components/Clock";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import HomeBar from "../../../components/ui/HomeBar/HomeBar";
-import CallNotification from "../Calls/CallNotification";
+// import CallNotification from "../Calls/CallNotification";
 
 const apps = [
   {
@@ -44,7 +44,7 @@ const HomePhone = () =>
     <div className="backGroundHome relative rounded-[30px] w-full h-full overflow-hidden">
       {!callDeclined && (
         <div className="calls relative">
-          <CallNotification setCallDeclined={setCallDeclined} />
+          {/* <CallNotification setCallDeclined={setCallDeclined} /> */}
         </div>
       )}
       {/* Static Apps */}
@@ -93,6 +93,7 @@ const HomePhone = () =>
           <HomeBar
             setOpenedFolder={setOpenedFolder}
             openedFolder={openedFolder}
+            bottom="30px"
           />
         )}
       </div>
