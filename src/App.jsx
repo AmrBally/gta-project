@@ -7,6 +7,7 @@ import AppStore from "./pages/AppStore/AppStore.jsx";
 import Gallery from "./pages/Gallery/Gallery.jsx";
 import Keyboard from "./pages/CallApp/Keyboard/Keyboard.jsx";
 import { useState } from "react";
+import Battery from "./pages/Home system/Battery/Battery.jsx";
 
 function App ()
 {
@@ -60,7 +61,27 @@ function App ()
             <>
               <Header />
               <Gallery />
+
               <HomeBar bottom="20px" />
+
+              <HomeBar />
+            </>
+          }
+        />
+        <Route
+          path="/folder"
+          element={
+            <>
+              <Folder />
+            </>
+          }
+        />
+        <Route
+          path="/battery"
+          element={
+            <>
+              <Battery />
+
             </>
           }
         />
