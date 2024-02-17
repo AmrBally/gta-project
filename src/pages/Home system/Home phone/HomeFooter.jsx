@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const footerApps = [
   {
     icon: phone,
-    path: "/contacts",
+    path: "/phonecall",
   },
   {
     icon: web,
@@ -23,16 +23,17 @@ const footerApps = [
   },
 ];
 
-function HomeFooter() {
+function HomeFooter ()
+{
   const navigate = useNavigate();
 
   return (
     <div className="absolute bottom-[28px] left-[50%] transform -translate-x-[50%] w-[92%] h-[70px] rounded-[22px]  bg-[rgb(13_18_37_/_90%)] flex items-center justify-evenly z-10">
-      {footerApps.map((item, index) => (
+      {footerApps.map( ( item, index ) => (
         <div
           key={index + "n"}
           className="w-[18%] hover:opacity-80 transition-all ease-in-out duration-300"
-          onClick={() => navigate(item.path)}
+          onClick={() => navigate( item.path )}
         >
           <img
             src={item.icon}
@@ -40,7 +41,7 @@ function HomeFooter() {
             className="cursor-pointer flex justify-center items-center w-full"
           />
         </div>
-      ))}
+      ) )}
     </div>
   );
 }

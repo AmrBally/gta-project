@@ -8,8 +8,6 @@ import facebook from "../../../assets/images/facebook.png";
 import tiktok from "../../../assets/images/tiktok.png";
 import shooping from "../../../assets/images/shopping.png";
 
-import { useNavigate } from "react-router-dom";
-import HomeBar from "../../../components/ui/HomeBar/HomeBar";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 // const navigate = useNavigate();
@@ -62,21 +60,22 @@ const apps = [
   },
 ];
 
-const Folder = () => {
+const Folder = () =>
+{
   return (
     <div className="absolute z-30 gap-[85px] backGroundFolder w-full top-[-53px] pt-[150px] left-0 text-white flex flex-col justify-center items-center h-screen mt-[50px]">
       <h1 className="h-[20%] text-[55px]">Folder</h1>
       <div className="backGroundFolderNotification h-[56%] w-[74%] gap-y-2 p-8 mb-[250px] rounded-[40px] flex flex-wrap justify-between items-start">
-        {apps.map((item) => {
+        {apps.map( ( item ) =>
+        {
           return (
             <div key={item.icon} className="text-center w-[29%]">
               <img src={item.icon} alt="" className="w-full" />
               <p className="text-[13px] my-[2px]">{item.name}</p>
             </div>
           );
-        })}
+        } )}
       </div>
-      <HomeBar />
     </div>
   );
 };

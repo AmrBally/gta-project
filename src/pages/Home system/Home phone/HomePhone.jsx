@@ -9,6 +9,7 @@ import Clock from "../../../components/Clock";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import HomeBar from "../../../components/ui/HomeBar/HomeBar";
+// import CallNotification from "../Calls/CallNotification";
 
 const apps = [
   {
@@ -33,19 +34,26 @@ const apps = [
   },
 ];
 
-const HomePhone = () => {
+const HomePhone = () =>
+{
   const navigate = useNavigate();
-  const [openedFolder, setOpenedFolder] = useState(false);
+  const [ openedFolder, setOpenedFolder ] = useState( false );
+  const [ callDeclined, setCallDeclined ] = useState( false );
 
   return (
     <div className="backGroundHome relative rounded-[30px] w-full h-full overflow-hidden">
+      {!callDeclined && (
+        <div className="calls relative">
+          {/* <CallNotification setCallDeclined={setCallDeclined} /> */}
+        </div>
+      )}
       {/* Static Apps */}
       <div className=" px-3 pt-[50px] flex justify-center items-center mx-auto gap-3">
         <div className="w-[48%] text-center">
           <div className="relative w-[100%]">
             <img src={clock} alt="" className="w-full" />
             <div
-              className="absolute top-[50%] left-[50%] text-[37px] font-bold"
+              className="absolute top-[50%] left-[50%] text-5xl font-bold"
               style={{ transform: "translate(-50%, -50%)" }}
             >
               <Clock />
@@ -54,19 +62,20 @@ const HomePhone = () => {
           <p className="text-white text-[10px] mt-[3px]">Clock</p>
         </div>
         <div className="w-[48%] flex flex-wrap justify-center gap-4 items-center ">
-          {apps.map((item, index) => {
+          {apps.map( ( item, index ) =>
+          {
             return (
               <div
                 key={index + "m"}
                 className={`hover:border-2 border-white text-white text-center w-[38%] h-full flex items-center justify-center flex-col`}
                 style={{}}
-                onClick={() => navigate(item.path)}
+                onClick={() => navigate( item.path )}
               >
                 <img src={item.icon} alt="" className="w-full" />
                 <p className="text-[10px] mt-[2px]">{item.name}</p>
               </div>
             );
-          })}
+          } )}
         </div>
       </div>
 
@@ -84,6 +93,7 @@ const HomePhone = () => {
           <HomeBar
             setOpenedFolder={setOpenedFolder}
             openedFolder={openedFolder}
+            bottom="30px"
           />
         )}
       </div>

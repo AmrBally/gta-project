@@ -8,7 +8,6 @@ import Instashot from "../../../assets/images/insta.png";
 import folder from "../../../assets/images/folder.png";
 import whatsApp from "../../../assets/images/whatsApp.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import Folder from "../Folder/Folder";
 import PropTypes from "prop-types";
 
