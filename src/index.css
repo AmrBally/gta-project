@@ -1,4 +1,15 @@
 @tailwind base;
+
+@layer base {
+  html {
+    @apply text-neutral-800;
+  }
+  html.dark {
+    @apply text-neutral-50;
+    @apply bg-neutral-800;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -52,7 +63,7 @@ body {
 
 .noScroll {
   -ms-overflow-style: none;
-/* for Internet Explorer, Edge */
+  /* for Internet Explorer, Edge */
   scrollbar-width: none;
   /* for Firefox */
   overflow-y: scroll;
@@ -67,14 +78,11 @@ body {
   display: none;
 }
 
-
-
 /* .controlSlider .MuiSlider-track.css-ada0pd-MuiSlider-track {
   border-radius: 0px 0px 20px 20px;
 } */
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
